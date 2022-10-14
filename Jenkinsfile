@@ -10,7 +10,6 @@ pipeline {
          UiPathRunJob(
           credentials: UserPass('3CK9qjk3hhTgHjnqeANuUQKRJrklIPTlcmw66qBkVbtXX'),
           failWhenJobFails: true,
-		  jobType: 'Service unattended'
           folderName: 'My Workspace',
           orchestratorAddress: 'https://cloud.uipath.com/',
           orchestratorTenant: 'DefaultTenant',
@@ -21,7 +20,8 @@ pipeline {
           strategy: Robot('robot1,robot2'),
           timeout: 1800,
           waitForJobCompletion: false,
-          traceLoggingLevel: 'None'
+          traceLoggingLevel: 'None',
+          jobType: 'Service unattended'
          )
 		}
     }
