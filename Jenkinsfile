@@ -17,6 +17,7 @@ pipeline {
           priority: 'Low',
           processName: 'ProcessA_EnvB',
           resultFilePath: 'project.json',
+		  jobType: 'Attended'
           strategy: Dynamically(jobsCount: 1, machine: 'TestMachine', user: 'TestUser'), timeout: 3600, waitForJobCompletion: true, traceLevel: 'None'
          )
 		}
