@@ -6,7 +6,8 @@ pipeline {
   }
   stages {
     stage ('Build') {
-        UiPathRunJob(
+	  steps {
+         UiPathRunJob(
           credentials: UserPass('3CK9qjk3hhTgHjnqeANuUQKRJrklIPTlcmw66qBkVbtXX'),
           failWhenJobFails: true,
           folderName: 'My Workspace',
@@ -17,7 +18,8 @@ pipeline {
           processName: 'ProcessA_EnvB',
           resultFilePath: 'project.json',
           strategy: Dynamically(jobsCount: 1, machine: 'TestMachine', user: 'TestUser'), timeout: 3600, waitForJobCompletion: true, traceLoggingLevel: 'None'
-        )
+         )
+		}
     }
   }
 }
